@@ -1,0 +1,4 @@
+==============问题1、无法连接服务器===================
+Q：由于服务器无法连接网络，导致wget download failed
+A: 从外网中下载指定{commit-id}的vscode-server-linux-x64.tar.gz，并将其解压到~/.vscode-server/bin/{commit-id}/
+
