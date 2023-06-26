@@ -2,3 +2,14 @@
 Q：由于服务器无法连接网络，导致wget download failed
 A: 从外网中下载指定{commit-id}的vscode-server-linux-x64.tar.gz，并将其解压到~/.vscode-server/bin/{commit-id}/
 
+
+==============问题2、ping不通的问题===================
+Q：由于双网络同时存在两个默认路由，导致路由错误
+A：使用命令route -n显示路由表,查找是否是双默认路由，并使用ifconfi命令禁用一个路由，例如ifconfig ens256 down
+
+Q:路由不成功问题，例如ping 192.168.4.41时，会通过路由192.168.4.0/24访问IP地址192.168.4.140
+A：使用trancepath -n -b ping 192.168.4.41进行路由追踪，确认是错误路由问题，使用命令route -n显示路由表，使用命令route del删除会产生影响的路由，例如route del -net 192.168.4.0 netmask 255.255.255.0 
+
+
+
+
